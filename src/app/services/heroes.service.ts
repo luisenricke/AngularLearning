@@ -73,9 +73,12 @@ export class HeroesService {
         let aux: Heroe[] = [];
         text = text.toLowerCase();
 
-        for (let heroe of this.heroes) {
+        //for (let heroe of this.heroes) {
+        for (let count = 0; count < this.heroes.length; count++ ) {
+            let heroe = this.heroes[count];
             let name = heroe.name.toLowerCase();
             if( name.indexOf(text) >= 0 ) {
+                heroe.id = count;
                 aux.push(heroe);
             }
         }
@@ -90,4 +93,5 @@ export interface Heroe {
     img: string;
     date: string;
     group: string;
+    id?: number;
 }

@@ -23,8 +23,8 @@ export class HeroeCardComponent implements OnInit {
 
    showHeroe() {
     // console.log(index);
-    // this.router.navigate( ['/heroe', this.index] );
-    this.selectedHeroe.emit (this.index);
+    this.router.navigate( ['/heroe', this.index] );
+    // this.selectedHeroe.emit (this.index);
   }
 
 }

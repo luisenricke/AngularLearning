@@ -14,7 +14,7 @@
 
 <div class="card-columns">
 
-    <app-heroe-card [heroe]="heroe" [index]="count" *ngFor="let heroe of heroes; let count = index"></app-heroe-card>
+    <app-heroe-card [heroe]="heroe" [index]="heroe.id" *ngFor="let heroe of heroes"></app-heroe-card>
 
 </div>
 
