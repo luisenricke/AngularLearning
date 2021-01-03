@@ -26,7 +26,7 @@
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search heroe" aria-label="Search" (keyup.enter)="searchHeroe(searchText.value)" #searchText>
+            <input class="form-control mr-sm-2" type="search" placeholder="Search heroe" aria-label="Search" (keyup)="searchKeyEnterHeroe($event, searchText.value)" #searchText>
             <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="searchHeroe(searchText.value)">Search</button>
         </form>
 
