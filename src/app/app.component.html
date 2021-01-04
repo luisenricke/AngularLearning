@@ -92,6 +92,30 @@
           <td>{{ promise | async }}</td>
         </tr>
 
+        <tr>
+          <td>{{ today }}</td>
+          <td>date</td>
+          <td>{{ today | date }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ today }}</td>
+          <td>date:'medium'</td>
+          <td>{{ today | date:'medium' }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ today }}</td>
+          <td>date:'short'</td>
+          <td>{{ today | date:'short' }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ today }}</td>
+          <td>date:'dd - MMM'</td>
+          <td>{{ today | date:'dd - MMM' }}</td>
+        </tr>
+
       </tbody>
     </table>
 

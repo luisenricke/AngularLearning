@@ -30,4 +30,6 @@ export class AppComponent {
       resolve('Dispatch data');
     }, 5000);
   });
+
+  today: Date = new Date();
 }
