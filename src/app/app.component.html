@@ -56,6 +56,18 @@
           <td>{{ PI | number:'.0-3' }}</td>
         </tr>
 
+        <tr>
+          <td>{{ percent }}</td>
+          <td>percent</td>
+          <td>{{ percent | percent }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ percent }}</td>
+          <td>percent:'2.2-2'</td>
+          <td>{{ percent | percent:'2.2-2' }}</td>
+        </tr>
+
       </tbody>
     </table>
 
