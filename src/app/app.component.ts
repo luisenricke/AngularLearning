@@ -13,6 +13,7 @@ export class AppComponent {
   PI: number = Math.PI;
   percent: number = 0.1501;
   salary: number = 1234.5;
+
   socialMedia = {
     twitter: '@LuisEnricke',
     instagram: '@LuisEnricKe',
@@ -23,4 +24,10 @@ export class AppComponent {
       sql: ['PostgreSQL', 'MySQL']
     }
   }
+
+  promise = new Promise<string> ( (resolve) => {
+    setTimeout(() => {
+      resolve('Dispatch data');
+    }, 5000);
+  });
 }
