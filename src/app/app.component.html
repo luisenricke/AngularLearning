@@ -44,15 +44,26 @@
           <td>{{ numbers | slice:2:6 }}</td>
         </tr>
 
+        <tr>
+          <td>{{ PI }}</td>
+          <td>number:'3.0-0'</td>
+          <td>{{ PI | number:'3.0-0' }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ PI }}</td>
+          <td>number:'.0-3'</td>
+          <td>{{ PI | number:'.0-3' }}</td>
+        </tr>
+
       </tbody>
     </table>
 
-    <h2>Slices</h2>
-    <ul>
-      <li *ngFor="let number of numbers | slice:5:20">{{ number }}</li>
-    </ul>
-
   </div>
-
-
 </div>
+
+<h2>Slices</h2>
+<hr>
+<ul class="list-group">
+  <li *ngFor="let hero of heros | slice:0:2" class="list-group-item">{{ hero }}</li>
+</ul>
