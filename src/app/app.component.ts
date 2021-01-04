@@ -12,4 +12,5 @@ export class AppComponent {
   heros: string[] = ['Ironman', 'Spider-Man', 'Thor', 'Groot', 'Black Widow'];
   PI: number = Math.PI;
   percent: number = 0.1501;
+  salary: number = 1234.5;
 }

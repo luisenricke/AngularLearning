@@ -68,6 +68,24 @@
           <td>{{ percent | percent:'2.2-2' }}</td>
         </tr>
 
+        <tr>
+          <td>{{ salary }}</td>
+          <td>currency</td>
+          <td>{{ salary | currency }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ salary }}</td>
+          <td>currency:'EUR'</td>
+          <td>{{ salary | currency:'EUR' }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ salary }}</td>
+          <td>currency:'MXN':'symbol-narrow':'.0-0'</td>
+          <td>{{ salary | currency:'MXN':'symbol-narrow':'.0-0' }}</td>
+        </tr>
+
       </tbody>
     </table>
 
