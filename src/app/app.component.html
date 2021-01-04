@@ -97,3 +97,13 @@
 <ul class="list-group">
   <li *ngFor="let hero of heros | slice:0:2" class="list-group-item">{{ hero }}</li>
 </ul>
+
+<h2>JSON</h2>
+<hr>
+<div class="row mb-5">
+  <div class="col">
+    <pre>
+      {{ socialMedia | json }}
+    </pre>
+  </div>
+</div>

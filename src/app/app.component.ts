@@ -13,4 +13,14 @@ export class AppComponent {
   PI: number = Math.PI;
   percent: number = 0.1501;
   salary: number = 1234.5;
+  socialMedia = {
+    twitter: '@LuisEnricke',
+    instagram: '@LuisEnricKe',
+    github: '@LuisEnricKe',
+    tools: {
+      back: ['Java', 'Kotlin', 'Groovy'],
+      front: ['Angular'],
+      sql: ['PostgreSQL', 'MySQL']
+    }
+  }
 }
