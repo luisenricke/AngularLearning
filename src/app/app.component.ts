@@ -32,4 +32,5 @@ export class AppComponent {
   });
 
   today: Date = new Date();
+  localeChoose: string = 'es';
 }

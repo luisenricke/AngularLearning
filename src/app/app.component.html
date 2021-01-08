@@ -116,6 +116,31 @@
           <td>{{ today | date:'dd - MMM' }}</td>
         </tr>
 
+        <tr>
+          <td>{{ today }}</td>
+          <td>date:'dd - MMMM':'':'{{ localeChoose }}'</td>
+          <td>{{ today | date:'dd - MMMM':'':localeChoose }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ today }}</td>
+          <td>
+            date:'dd - MMMM':'':'{{ localeChoose }}' <br>
+            <button (click)="localeChoose='es'" class="mr-2 btn btn-primary">
+              Español
+            </button>
+
+            <button (click)="localeChoose='en'" class="mr-2 btn btn-info">
+              Inglés
+            </button>
+
+            <button (click)="localeChoose='fr'" class="mr-2 btn btn-success">
+              Frances
+            </button>
+          </td>
+          <td>{{ today | date:'dd - MMMM':'':localeChoose }}</td>
+        </tr>
+
       </tbody>
     </table>
 
