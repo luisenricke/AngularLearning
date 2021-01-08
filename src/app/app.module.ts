@@ -6,11 +6,13 @@ import '@angular/common/locales/global/fr';
 import '@angular/common/locales/global/en';
 
 import { AppComponent } from './app.component';
+import { CapitalicePipe } from './pipes/capitalice.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CapitalicePipe
   ],
   imports: [
     BrowserModule

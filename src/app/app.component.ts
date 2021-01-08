@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   username: string = '@LuisEnricKe';
+  name: string = 'luIs eNriqUe'
   numbers: number[] = [1,2,3,4,5,6,7,8,9];
   heros: string[] = ['Ironman', 'Spider-Man', 'Thor', 'Groot', 'Black Widow'];
   PI: number = Math.PI;
