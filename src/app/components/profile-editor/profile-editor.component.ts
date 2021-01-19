@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray, Validators, FormGroup } from '@angular/forms';
+import { fromEvent } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile-editor',
@@ -11,7 +13,6 @@ export class ProfileEditorComponent implements OnInit {
   profileForm: FormGroup;
   message: string;
   name: string;
-
 
 
   constructor(private fb: FormBuilder) { }
@@ -33,6 +34,7 @@ export class ProfileEditorComponent implements OnInit {
 
     this.onChanges();
     this.onChangeOneValue();
+    this.onChangePipe();
   }
 
   onSubmit() {
@@ -68,5 +70,18 @@ export class ProfileEditorComponent implements OnInit {
       this.name = `Hello ${value}`;
     });
   }
+
+  private onChangePipe() {
+    this.profileForm.get('address.street').valueChanges
+    .pipe(
+      filter((text: string) => text.length > 3),
+      debounceTime(1000),
+      distinctUntilChanged()
+    )
+    .subscribe(value => {
+      console.log(`street: ${value}`);
+    });
+  }
+
 
 }
