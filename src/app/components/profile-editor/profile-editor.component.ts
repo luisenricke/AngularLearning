@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { Validators } from '@angular/forms';
+import { FormBuilder, FormArray, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -9,24 +8,36 @@ import { Validators } from '@angular/forms';
 })
 export class ProfileEditorComponent implements OnInit {
 
-  profileForm = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: [''],
-    address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: ['']
-    }),
-  });
+  profileForm: FormGroup;
+  message: string;
+  name: string;
+
+
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.profileForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: [''],
+      address: this.fb.group({
+        street: [''],
+        city: [''],
+        state: [''],
+        zip: ['']
+      }),
+      aliases: this.fb.array([
+        this.fb.control('')
+      ])
+    });
+
+    this.onChanges();
+    this.onChangeOneValue();
   }
 
   onSubmit() {
-    console.warn(this.profileForm.value);
+    console.log(`All form: ${this.message}`);
+    console.log(`One input: ${this.name}`);
   }
 
   updateProfile() {
@@ -35,6 +46,26 @@ export class ProfileEditorComponent implements OnInit {
       address: {
         street: '123 Drew Street'
       }
+    });
+  }
+
+  get aliases() {
+    return this.profileForm.get('aliases') as FormArray;
+  }
+
+  addAlias() {
+    this.aliases.push(this.fb.control(''));
+  }
+
+  private onChanges(){
+    this.profileForm.valueChanges.subscribe(value => {
+      this.message = `Hello ${value.firstName} ${value.lastName}, nice to meet you.`;
+    });
+  }
+
+  private onChangeOneValue() {
+    this.profileForm.get('firstName').valueChanges.subscribe(value => {
+      this.name = `Hello ${value}`;
     });
   }
 
